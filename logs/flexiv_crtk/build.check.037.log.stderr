@@ -1,0 +1,8 @@
+[31m[1mCMake Error[0m at /opt/ros/melodic/share/genmsg/cmake/genmsg-extras.cmake:197 (message):
+  generate_messages() must be called before catkin_package() in project
+  'flexiv_crtk'
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:74 (generate_messages)
+
+
+make: *** [cmake_check_build_system] Error 1

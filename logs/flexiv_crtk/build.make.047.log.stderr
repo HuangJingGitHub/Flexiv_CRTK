@@ -1,0 +1,19 @@
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:77:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK_<std::allocator<void> >::_measured_cv_type {aka struct geometry_msgs::Twist_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kforce[m[K’
+         robot_states_msg.measured_cv.[01;31m[Kforce[m[K.y = cur_robot_states.extForceInBaseFrame[1];
+                                      [01;31m[K^~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:78:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK_<std::allocator<void> >::_measured_cv_type {aka struct geometry_msgs::Twist_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kforce[m[K’
+         robot_states_msg.measured_cv.[01;31m[Kforce[m[K.z = cur_robot_states.extForceInBaseFrame[2];
+                                      [01;31m[K^~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:79:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK_<std::allocator<void> >::_measured_cv_type {aka struct geometry_msgs::Twist_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Ktorque[m[K’
+         robot_states_msg.measured_cv.[01;31m[Ktorque[m[K.x = cur_robot_states.extForceInBaseFrame[3];
+                                      [01;31m[K^~~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:80:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK_<std::allocator<void> >::_measured_cv_type {aka struct geometry_msgs::Twist_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Ktorque[m[K’
+         robot_states_msg.measured_cv.[01;31m[Ktorque[m[K.y = cur_robot_states.extForceInBaseFrame[4];
+                                      [01;31m[K^~~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:81:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK_<std::allocator<void> >::_measured_cv_type {aka struct geometry_msgs::Twist_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Ktorque[m[K’
+         robot_states_msg.measured_cv.[01;31m[Ktorque[m[K.z = cur_robot_states.extForceInBaseFrame[5];
+                                      [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/robot_state_publisher.dir/src/robot_state_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/robot_state_publisher.dir/all] Error 2
+make: *** [all] Error 2

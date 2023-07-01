@@ -1,0 +1,8 @@
+In file included from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/test_main.cpp:3:0[m[K:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_config.hpp:[m[K In function ‘[01m[Kint initRobotMain()[m[K’:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_config.hpp:99:16:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kflexiv::Robot*[m[K’ to ‘[01m[Kflexiv::Robot_CRTK*[m[K’ [[01;31m[K-fpermissive[m[K]
+     robotPtr = [01;31m[K&robot[m[K;
+                [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/test_main.dir/src/test_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/test_main.dir/all] Error 2
+make: *** [all] Error 2

@@ -1,0 +1,22 @@
+In file included from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_config.hpp:7:0[m[K,
+                 from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/test_main.cpp:3[m[K:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:[m[K In member function ‘[01m[Kvoid flexiv::Robot_CRTK::interpolate_cp(const std::vector<double>&, const std::vector<double>&)[m[K’:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:90:20:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot[m[K’ was not declared in this scope
+             while ([01;31m[Krobot[m[K.getMode() != flexiv::MODE_CARTESIAN_IMPEDANCE_NRT) {
+                    [01;31m[K^~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:90:20:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[KRobot[m[K’
+             while ([01;36m[Krobot[m[K.getMode() != flexiv::MODE_CARTESIAN_IMPEDANCE_NRT) {
+                    [01;36m[K^~~~~[m[K
+                    [32m[KRobot[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:91:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::this_thread[m[K’ has not been declared
+                 std::[01;31m[Kthis_thread[m[K::sleep_for(std::chrono::milliseconds(1));1
+                      [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:91:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::chrono[m[K’ has not been declared
+                 std::this_thread::sleep_for(std::[01;31m[Kchrono[m[K::milliseconds(1));1
+                                                  [01;31m[K^~~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:92:13:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+             [01;31m[K}[m[K
+             [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/test_main.dir/src/test_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/test_main.dir/all] Error 2
+make: *** [all] Error 2

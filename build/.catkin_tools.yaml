@@ -1,0 +1,6 @@
+devel_space: /home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/devel
+install: false
+install_space: /home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/install
+profile: default
+source_space: /home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src
+workspace: /home/jing/Documents/Scripts/CRTK/Flexiv_CRTK

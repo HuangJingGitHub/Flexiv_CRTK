@@ -1,0 +1,14 @@
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:48:30:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kflexiv::Robot_CRTK::getRobotStates()[m[K’
+         robot.getRobotStates([01;31m[K)[m[K;
+                              [01;31m[K^[m[K
+In file included from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:9:0[m[K,
+                 from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_config.hpp:7[m[K,
+                 from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:2[m[K:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot.hpp:143:10:[m[K [01;36m[Knote: [m[Kcandidate: void flexiv::Robot::getRobotStates(flexiv::RobotStates&)
+     void [01;36m[KgetRobotStates[m[K(RobotStates& output);
+          [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot.hpp:143:10:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+make[2]: *** [CMakeFiles/robot_state_publisher.dir/src/robot_state_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/robot_state_publisher.dir/all] Error 2
+make: *** [all] Error 2

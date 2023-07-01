@@ -1,0 +1,9 @@
+CMakeFiles/test_main.dir/src/test_main.cpp.o: In function `main':
+test_main.cpp:(.text+0x151c): undefined reference to `flexiv::Robot_CRTK::~Robot_CRTK()'
+test_main.cpp:(.text+0x16c3): undefined reference to `flexiv::Robot_CRTK::~Robot_CRTK()'
+CMakeFiles/test_main.dir/src/test_main.cpp.o: In function `flexiv::Robot_CRTK::Robot_CRTK(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+test_main.cpp:(.text._ZN6flexiv10Robot_CRTKC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_[_ZN6flexiv10Robot_CRTKC5ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_]+0x2e): undefined reference to `vtable for flexiv::Robot_CRTK'
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/devel/.private/flexiv_crtk/lib/flexiv_crtk/test_main] Error 1
+make[1]: *** [CMakeFiles/test_main.dir/all] Error 2
+make: *** [all] Error 2

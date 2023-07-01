@@ -1,0 +1,8 @@
+prefix=/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/install
+
+Name: visual_rviz
+Description: Description of visual_rviz
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

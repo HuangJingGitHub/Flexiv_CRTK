@@ -1,0 +1,5 @@
+[35m[1mScanning dependencies of target joint_states_pub_test[0m
+[ 50%] Built target basic_shapes
+[ 75%] [32mBuilding CXX object CMakeFiles/joint_states_pub_test.dir/src/joint_states_publisher_test.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/devel/.private/visual_rviz/lib/visual_rviz/joint_states_pub_test[0m
+[100%] Built target joint_states_pub_test

@@ -1,0 +1,58 @@
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:51:64:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kflexiv_crtk::RobotStates_CRTK_<std::allocator<void> >::_measured_jp_type {aka boost::array<double, 7>}[m[K’ and ‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<double> >::value_type {aka double}[m[K’)
+             robot_states_msg.measured_jp = cur_robot_states.q[i[01;31m[K][m[K;
+                                                                [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/message.h:38:0[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/publisher.h:33[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/node_handle.h:32[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:1[m[K:
+[01m[K/usr/include/boost/array.hpp:172:21:[m[K [01;36m[Knote: [m[Kcandidate: template<class T2> boost::array<T, N>& boost::array<T, N>::operator=(const boost::array<T2, N>&) [with T2 = T2; T = double; long unsigned int N = 7]
+         array<T,N>& [01;36m[Koperator[m[K= (const array<T2,N>& rhs) {
+                     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/boost/array.hpp:172:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:51:64:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst boost::array<T2, 7>[m[K’ and ‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<double> >::value_type {aka double}[m[K’
+             robot_states_msg.measured_jp = cur_robot_states.q[i[01;36m[K][m[K;
+                                                                [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/message.h:38:0[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/publisher.h:33[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/node_handle.h:32[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:1[m[K:
+[01m[K/usr/include/boost/array.hpp:61:11:[m[K [01;36m[Knote: [m[Kcandidate: constexpr boost::array<double, 7>& boost::array<double, 7>::operator=(const boost::array<double, 7>&)
+     class [01;36m[Karray[m[K {
+           [01;36m[K^~~~~[m[K
+[01m[K/usr/include/boost/array.hpp:61:11:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<double> >::value_type {aka double}[m[K’ to ‘[01m[Kconst boost::array<double, 7>&[m[K’
+[01m[K/usr/include/boost/array.hpp:61:11:[m[K [01;36m[Knote: [m[Kcandidate: constexpr boost::array<double, 7>& boost::array<double, 7>::operator=(boost::array<double, 7>&&)
+[01m[K/usr/include/boost/array.hpp:61:11:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<double> >::value_type {aka double}[m[K’ to ‘[01m[Kboost::array<double, 7>&&[m[K’
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:53:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK {aka struct flexiv_crtk::RobotStates_CRTK_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kmeasured_cp[m[K’; did you mean ‘[01m[Kmeasured_jp[m[K’?
+         robot_states_msg.[01;31m[Kmeasured_cp[m[K.position.x = cur_robot_states.tcpPose[0];
+                          [01;31m[K^~~~~~~~~~~[m[K
+                          [32m[Kmeasured_jp[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:54:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK {aka struct flexiv_crtk::RobotStates_CRTK_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kmeasured_cp[m[K’; did you mean ‘[01m[Kmeasured_jp[m[K’?
+         robot_states_msg.[01;31m[Kmeasured_cp[m[K.position.y = cur_robot_states.tcpPose[1];
+                          [01;31m[K^~~~~~~~~~~[m[K
+                          [32m[Kmeasured_jp[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:55:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK {aka struct flexiv_crtk::RobotStates_CRTK_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kmeasured_cp[m[K’; did you mean ‘[01m[Kmeasured_jp[m[K’?
+         robot_states_msg.[01;31m[Kmeasured_cp[m[K.position.z = cur_robot_states.tcpPose[2];
+                          [01;31m[K^~~~~~~~~~~[m[K
+                          [32m[Kmeasured_jp[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:56:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK {aka struct flexiv_crtk::RobotStates_CRTK_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kmeasured_cp[m[K’; did you mean ‘[01m[Kmeasured_jp[m[K’?
+         robot_states_msg.[01;31m[Kmeasured_cp[m[K.orientation.x = cur_robot_states.tcpPose[3];
+                          [01;31m[K^~~~~~~~~~~[m[K
+                          [32m[Kmeasured_jp[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:57:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK {aka struct flexiv_crtk::RobotStates_CRTK_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kmeasured_cp[m[K’; did you mean ‘[01m[Kmeasured_jp[m[K’?
+         robot_states_msg.[01;31m[Kmeasured_cp[m[K.orientation.y = cur_robot_states.tcpPose[4];
+                          [01;31m[K^~~~~~~~~~~[m[K
+                          [32m[Kmeasured_jp[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:58:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK {aka struct flexiv_crtk::RobotStates_CRTK_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kmeasured_cp[m[K’; did you mean ‘[01m[Kmeasured_jp[m[K’?
+         robot_states_msg.[01;31m[Kmeasured_cp[m[K.orientation.z = cur_robot_states.tcpPose[5];
+                          [01;31m[K^~~~~~~~~~~[m[K
+                          [32m[Kmeasured_jp[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_state_publisher.cpp:59:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kflexiv_crtk::RobotStates_CRTK {aka struct flexiv_crtk::RobotStates_CRTK_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Kmeasured_cp[m[K’; did you mean ‘[01m[Kmeasured_jp[m[K’?
+         robot_states_msg.[01;31m[Kmeasured_cp[m[K.orientation.w = cur_robot_states.tcpPose[6];
+                          [01;31m[K^~~~~~~~~~~[m[K
+                          [32m[Kmeasured_jp[m[K
+make[2]: *** [CMakeFiles/robot_state_publisher.dir/src/robot_state_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/robot_state_publisher.dir/all] Error 2
+make: *** [all] Error 2

@@ -1,0 +1,100 @@
+In file included from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_config.hpp:7:0[m[K,
+                 from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/test_main.cpp:1[m[K:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:[m[K In member function ‘[01m[Kvoid flexiv::Robot_CRTK::initRobotStatesPublisher()[m[K’:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:154:9:[m[K [01;31m[Kerror: [m[K‘[01m[KLog[m[K’ was not declared in this scope
+         [01;31m[KLog[m[K log;
+         [01;31m[K^~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:154:9:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Klog[m[K’
+         [01;36m[KLog[m[K log;
+         [01;36m[K^~~[m[K
+         [32m[Klog[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:157:21:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+                 log.[01;31m[Kwarn[m[K("Fault occurred on robot server, trying to clear ...");
+                     [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:161:25:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+                     log.[01;31m[Kerror[m[K("Fault cannot be cleared, exiting ...");
+                         [01;31m[K^~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:162:28:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning 'void' [[01;31m[K-fpermissive[m[K]
+                     return [01;31m[K1[m[K;
+                            [01;31m[K^[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:164:21:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+                 log.[01;31m[Kinfo[m[K("Fault on robot server is cleared");
+                     [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:166:17:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+             log.[01;31m[Kinfo[m[K("Enabling robot ...");
+                 [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:173:25:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+                     log.[01;31m[Kwarn[m[K( "Still waiting for robot to become operational, please"
+                         [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:177:17:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+             log.[01;31m[Kinfo[m[K("Robot is now operational");
+                 [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:180:17:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+             log.[01;31m[Kerror[m[K(e.what());
+                 [01;31m[K^~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:181:20:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning 'void' [[01;31m[K-fpermissive[m[K]
+             return [01;31m[K1[m[K;
+                    [01;31m[K^[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:184:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kargc[m[K’ was not declared in this scope
+         ros::init([01;31m[Kargc[m[K, argv, "robot_states_pub_node");
+                   [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:184:19:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kerfc[m[K’
+         ros::init([01;36m[Kargc[m[K, argv, "robot_states_pub_node");
+                   [01;36m[K^~~~[m[K
+                   [32m[Kerfc[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:184:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kargv[m[K’ was not declared in this scope
+         ros::init(argc, [01;31m[Kargv[m[K, "robot_states_pub_node");
+                         [01;31m[K^~~~[m[K
+In file included from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_config.hpp:7:0[m[K,
+                 from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_states_publisher.cpp:2[m[K:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:[m[K In member function ‘[01m[Kvoid flexiv::Robot_CRTK::initRobotStatesPublisher()[m[K’:
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:154:9:[m[K [01;31m[Kerror: [m[K‘[01m[KLog[m[K’ was not declared in this scope
+         [01;31m[KLog[m[K log;
+         [01;31m[K^~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:154:9:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Klog[m[K’
+         [01;36m[KLog[m[K log;
+         [01;36m[K^~~[m[K
+         [32m[Klog[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:157:21:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+                 log.[01;31m[Kwarn[m[K("Fault occurred on robot server, trying to clear ...");
+                     [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:161:25:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+                     log.[01;31m[Kerror[m[K("Fault cannot be cleared, exiting ...");
+                         [01;31m[K^~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:162:28:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning 'void' [[01;31m[K-fpermissive[m[K]
+                     return [01;31m[K1[m[K;
+                            [01;31m[K^[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:164:21:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+                 log.[01;31m[Kinfo[m[K("Fault on robot server is cleared");
+                     [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:166:17:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+             log.[01;31m[Kinfo[m[K("Enabling robot ...");
+                 [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:173:25:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+                     log.[01;31m[Kwarn[m[K( "Still waiting for robot to become operational, please"
+                         [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:177:17:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+             log.[01;31m[Kinfo[m[K("Robot is now operational");
+                 [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:180:17:[m[K [01;31m[Kerror: [m[Koverloaded function with no contextual type information
+             log.[01;31m[Kerror[m[K(e.what());
+                 [01;31m[K^~~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:181:20:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning 'void' [[01;31m[K-fpermissive[m[K]
+             return [01;31m[K1[m[K;
+                    [01;31m[K^[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:184:19:[m[K [01;31m[Kerror: [m[K‘[01m[Kargc[m[K’ was not declared in this scope
+         ros::init([01;31m[Kargc[m[K, argv, "robot_states_pub_node");
+                   [01;31m[K^~~~[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:184:19:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kerfc[m[K’
+         ros::init([01;36m[Kargc[m[K, argv, "robot_states_pub_node");
+                   [01;36m[K^~~~[m[K
+                   [32m[Kerfc[m[K
+[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/flexiv_include/flexiv/Robot_CRTK.hpp:184:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kargv[m[K’ was not declared in this scope
+         ros::init(argc, [01;31m[Kargv[m[K, "robot_states_pub_node");
+                         [01;31m[K^~~~[m[K
+make[2]: *** [CMakeFiles/test_main.dir/src/test_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/test_main.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/robot_states_publisher.dir/src/robot_states_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/robot_states_publisher.dir/all] Error 2
+make: *** [all] Error 2

@@ -1,0 +1,21 @@
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_py
+[  6%] Built target geometry_msgs_generate_messages_eus
+[ 26%] Built target robot_states_publisher
+[ 26%] Built target teleoperation_test
+[ 26%] Built target geometry_msgs_generate_messages_nodejs
+[ 40%] Built target test_main
+[ 53%] Built target robot_states_subscriber
+[ 53%] Built target _flexiv_crtk_generate_messages_check_deps_RobotStates_CRTK
+[ 60%] Built target flexiv_crtk_generate_messages_nodejs
+[ 66%] Built target flexiv_crtk_generate_messages_cpp
+[ 80%] Built target flexiv_crtk_generate_messages_eus
+[ 93%] Built target flexiv_crtk_generate_messages_py
+[100%] Built target flexiv_crtk_generate_messages_lisp
+[100%] Built target flexiv_crtk_generate_messages
