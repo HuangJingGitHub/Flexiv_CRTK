@@ -10,6 +10,7 @@
 #include "Utility.hpp"
 #include "flexiv_crtk/RobotStates_CRTK.h"
 #include "ros/ros.h"
+#include <sensor_msgs/JointState.h>
 #include <thread>
 
 namespace flexiv {
@@ -20,8 +21,10 @@ namespace flexiv {
  */
 class Robot_CRTK : public Robot {
 private:
-    ros::NodeHandle node_handle;
+    // ros::NodeHandle node_handle;
     ros::Publisher robot_states_publisher;
+    ros::Publisher joint_states_publisher;
+    std::vector<std::string> joint_name_vec{"joint1", "joint2", "joint3", "joint4", "joint5", "joint6", "joint7"};
     ros::Duration publish_period = ros::Duration(0.001);
     ros::Timer timer;
 public:
@@ -30,7 +33,12 @@ public:
     Robot_CRTK(const std::string& serverIP, const std::string& localIP, bool in_ROS = false): Robot(serverIP, localIP) {
         ROS_mode = in_ROS;
         if (ROS_mode) {
+            int argc_alias = 0;
+            char **argv_alias = nullptr;
+            ros::init(argc_alias, argv_alias, "robot_states_pub_class_node");
+            ros::NodeHandle node_handle;
             robot_states_publisher = node_handle.advertise<flexiv_crtk::RobotStates_CRTK>("/flexiv/robot_states", 500);
+            joint_states_publisher = node_handle.advertise<sensor_msgs::JointState>("/joint_states", 2000);
             timer = node_handle.createTimer(publish_period, &Robot_CRTK::publishRobotStates, this);
         }
     }
@@ -201,7 +209,18 @@ public:
         robot_states_msg.measured_cf.torque.y = cur_robot_states.extForceInBaseFrame[4];
         robot_states_msg.measured_cf.torque.z = cur_robot_states.extForceInBaseFrame[5];    
 
-        robot_states_publisher.publish(robot_states_msg);        
+        // joint state
+        sensor_msgs::JointState cur_joint_state;
+        cur_joint_state.header.stamp = ros::Time::now();
+        cur_joint_state.name = joint_name_vec;
+        for (int i = 0; i < cur_robot_states.q.size(); i++) {
+            cur_joint_state.position.push_back(cur_robot_states.q[i]);
+            cur_joint_state.velocity.push_back(0);
+            cur_joint_state.effort.push_back(0);
+        }        
+        
+        robot_states_publisher.publish(robot_states_msg);  
+        joint_states_publisher.publish(cur_joint_state);      
     }
 };
 
