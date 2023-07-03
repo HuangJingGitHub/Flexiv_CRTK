@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import rospy
 import numpy as np
 import PyKDL as kdl
@@ -6,11 +7,29 @@ from flexiv_crtk.msg import RobotStates_CRTK
 from dvrk import mtm
 
 robot_pose = kdl.Frame()
+robot_pose.M[0, 0] = -1
+robot_pose.M[1, 1] = 0
+robot_pose.M[2, 1] = 1
+robot_pose.M[2, 2] = 0
+robot_pose.M[1, 2] = 1
+
+master_gripper_once_closed = False
 
 def robotStateMsgCallback(data):
-    robot_pose_pos = kdl.Vector(data.position.x, data.position.y, data.position.z)
-    robot_pose_rot = kdl.Rotation.Quaternion(data.orientation.x, data.orientation.y, data.orientation.z, data.orientation.w)
-    robot_pose = kdl.Frame(robot_pose_pos, robot_pose_rot)
+    #print('robot message callback')
+    global robot_pose
+    robot_pose_pos = kdl.Vector(data.measured_cp.position.x, data.measured_cp.position.y, data.measured_cp.position.z)
+    robot_pose_rot = kdl.Rotation.Quaternion(data.measured_cp.orientation.x, 
+                                            data.measured_cp.orientation.y, 
+                                            data.measured_cp.orientation.z, 
+                                            data.measured_cp.orientation.w)
+    robot_pose = kdl.Frame(robot_pose_rot, robot_pose_pos)
+    #print(robot_pose)
+
+def masterGripperClosedCallback(data):
+    global master_gripper_once_closed
+    if data.data == True:
+        master_gripper_once_closed = True
 
 def computeDiffofRots(rot_1, rot_2):
     rot_1_to_2 = rot_2 * rot_1.Inverse()
@@ -30,26 +49,21 @@ if __name__ == '__main__':
     print('Master homed')
 
     # rospy.init_node('robot_states_sub', anonymous = True)
-    # rospy.Subscriber('/flexiv/robot_states', RobotStates_CRTK, robotStateMsgCallback)
+    rospy.Subscriber('/flexiv/robot_states', RobotStates_CRTK, robotStateMsgCallback)
+    rospy.Subscriber('/MTML/gripper/closed', Bool, masterGripperClosedCallback)
     align_state_pub = rospy.Publisher('/MTM_align_state', Bool, queue_size = 100)
-    ros_rate = rospy.Rate(10)
+    ros_rate = rospy.Rate(100)
 
-    robot_pose.M = kdl.Rotation.Identity()
-    robot_pose.M[0, 0] = -1
-    robot_pose.M[1, 1] = 0
-    robot_pose.M[2, 1] = 1
-    robot_pose.M[2, 2] = 0
-    robot_pose.M[1, 2] = 1
     cur_pose = ml.measured_cp()
     is_MTM_aligned = False
     while not rospy.is_shutdown():
-        if computeDiffofRots(cur_pose.M, robot_pose.M) > 0.02:
-            print('Current rotation difference:')
-            print(computeDiffofRots(cur_pose.M, robot_pose.M))
-            print('MTM pose:')
-            print(ml.measured_cp())
-            print('robot pose:')
-            print(robot_pose)
+        print('Current rotation difference:')
+        print(computeDiffofRots(cur_pose.M, robot_pose.M))
+        print('MTM pose:')
+        print(ml.measured_cp())
+        print('robot pose:')
+        print(robot_pose)        
+        if computeDiffofRots(cur_pose.M, robot_pose.M) > 0.02 and is_MTM_aligned == False:
             goal_pose = cur_pose
             goal_pose.M = robot_pose.M
             ml.move_cp(goal_pose)
@@ -61,8 +75,10 @@ if __name__ == '__main__':
         ros_rate.sleep()
         
         if is_MTM_aligned:
+            print('Master aligned')
             # detect user hand
-            # ml.body.servo_cf(np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]))
-            print('aligned')
+            if master_gripper_once_closed:
+                print('Clamp gripper detected')
+                ml.body.servo_cf(np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]))
             continue
             
