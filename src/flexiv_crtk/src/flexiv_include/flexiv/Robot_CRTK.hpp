@@ -10,7 +10,7 @@
 #include "Utility.hpp"
 #include "flexiv_crtk/RobotStates_CRTK.h"
 #include "ros/ros.h"
-#include <sensor_msgs/JointState.h>
+#include "sensor_msgs/JointState.h"
 #include <thread>
 
 namespace flexiv {
@@ -38,7 +38,7 @@ public:
             ros::init(argc_alias, argv_alias, "robot_states_pub_class_node");
             ros::NodeHandle node_handle;
             robot_states_publisher = node_handle.advertise<flexiv_crtk::RobotStates_CRTK>("/flexiv/robot_states", 500);
-            joint_states_publisher = node_handle.advertise<sensor_msgs::JointState>("/joint_states", 2000);
+            joint_states_publisher = node_handle.advertise<sensor_msgs::JointState>("/joint_states", 5000);
             timer = node_handle.createTimer(publish_period, &Robot_CRTK::publishRobotStates, this);
         }
     }
@@ -182,10 +182,10 @@ public:
         robot_states_msg.measured_cp.position.x = cur_robot_states.tcpPose[0];
         robot_states_msg.measured_cp.position.y = cur_robot_states.tcpPose[1];
         robot_states_msg.measured_cp.position.z = cur_robot_states.tcpPose[2];
-        robot_states_msg.measured_cp.orientation.x = cur_robot_states.tcpPose[3];
-        robot_states_msg.measured_cp.orientation.y = cur_robot_states.tcpPose[4];
-        robot_states_msg.measured_cp.orientation.z = cur_robot_states.tcpPose[5];
-        robot_states_msg.measured_cp.orientation.w = cur_robot_states.tcpPose[6];
+        robot_states_msg.measured_cp.orientation.w = cur_robot_states.tcpPose[3];
+        robot_states_msg.measured_cp.orientation.x = cur_robot_states.tcpPose[4];
+        robot_states_msg.measured_cp.orientation.y = cur_robot_states.tcpPose[5];
+        robot_states_msg.measured_cp.orientation.z = cur_robot_states.tcpPose[6];
 
         robot_states_msg.goal_cp.position.x = cur_robot_states.tcpPoseDes[0];
         robot_states_msg.goal_cp.position.y = cur_robot_states.tcpPoseDes[1];
