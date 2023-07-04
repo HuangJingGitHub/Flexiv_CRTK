@@ -21,6 +21,7 @@ std::string master_align_state_topic = "/MTM_align_state";
 std::string master_gripper_closed_totic = "MTML/gripper/closed";
 Eigen::Vector3d master_translation, robot_translation, initial_master_translation, initial_robot_translation, master_translation_variation;
 Eigen::Quaterniond master_quaterion, robot_quaterion, initial_master_quaterion, initial_robot_quaterion;
+Eigen::Quaterniond master_rotation_variation(1, 0, 0, 0);
 Eigen::Matrix4d master_rotation_mat, robot_rotation_mat, initial_master_rotation_mat, initial_robot_rotation_mat;
 double translation_scale = 1;
 Eigen::Matrix3d master_to_robot_base_transform = Eigen::MatrixXd::Identity(3, 3); // happy to be consistent
@@ -39,6 +40,10 @@ void masterMsgCallback(const geometry_msgs::TransformStamped& msg) {
     master_quaterion.x() = msg.transform.rotation.x;
     master_quaterion.y() = msg.transform.rotation.y;
     master_quaterion.z() = msg.transform.rotation.z;
+
+    if (master_pose_initialized == true) {
+        master_rotation_variation = master_quaterion * initial_master_quaterion.inverse();
+    }
 
     if (master_pose_initialized == false) {
         master_pose_initialized = true;
@@ -133,7 +138,7 @@ int main(int argc, char** argv) {
     ros::Subscriber master_gripper_closed_sub = node_handle.subscribe(master_gripper_closed_totic, 100, masterGripperClosedMsgCallback);
     ros::Subscriber master_cp_sub = node_handle.subscribe(master_measured_cp_topic, 100, masterMsgCallback);
     ros::Subscriber robot_cp_sub = node_handle.subscribe("flexiv/robot_states/", 100, robotMsgCallback);
-    ros::Rate loop_rate(100);
+    ros::Rate loop_rate(20);
     
     // master alignment
     while (master_aligned == false) {
@@ -149,10 +154,13 @@ int main(int argc, char** argv) {
         std::cout << "Ready to start teleoperation. Clamp the master finger gripper to start teleoperation\n";
         ros::spinOnce();
     }
+
     while (true) {
         master_translation_variation = translation_scale * (master_translation - initial_master_translation);
         std::vector<double> robot_target_pose(7, 0);
-        transformPoseIntoVec(robot_target_pose, master_translation_variation, master_quaterion);
+        // transformPoseIntoVec(robot_target_pose, master_translation_variation, master_quaterion);
+        Eigen::Quaterniond target_robot_quaterion = master_rotation_variation * initial_robot_quaterion;
+        transformPoseIntoVec(robot_target_pose, master_translation_variation, target_robot_quaterion);
         robot.interpolate_cp(robot_target_pose);
         ros::spinOnce();
         loop_rate.sleep();
