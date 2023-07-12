@@ -138,7 +138,7 @@ int main(int argc, char** argv) {
     ros::Subscriber master_gripper_closed_sub = node_handle.subscribe(master_gripper_closed_totic, 100, masterGripperClosedMsgCallback);
     ros::Subscriber master_cp_sub = node_handle.subscribe(master_measured_cp_topic, 100, masterMsgCallback);
     ros::Subscriber robot_cp_sub = node_handle.subscribe("flexiv/robot_states/", 100, robotMsgCallback);
-    ros::Rate loop_rate(20);
+    ros::Rate loop_rate(30);
     
     // master alignment
     while (master_aligned == false) {

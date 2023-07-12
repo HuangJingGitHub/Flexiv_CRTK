@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv) {
     flexiv::Log log;
-    flexiv::Robot_CRTK robot(robotIP, localIP);
+    flexiv::Robot_CRTK robot(robotIP, localIP, true);
     try {
         if (robot.isFault()) {
             log.warn("Fault occurred on robot server, trying to clear ...");
@@ -35,12 +35,13 @@ int main(int argc, char **argv) {
         return 1;
     } 
 
-    ros::init(argc, argv, "robot_states_pub_node");
+    ros::spin();
+/*     ros::init(argc, argv, "robot_states_pub_node");
     ros::NodeHandle node_handle;
     ros::Publisher robot_states_publisher = node_handle.advertise<flexiv_crtk::RobotStates_CRTK>("/flexiv/robot_states", 1000);
-    ros::Rate loop_rate(1000);
+    ros::Rate loop_rate(1000); */
     
-    while (ros::ok) {
+/*     while (ros::ok) {
         flexiv_crtk::RobotStates_CRTK robot_states_msg;
         flexiv::RobotStates cur_robot_states;
         robot.getRobotStates(cur_robot_states);
@@ -82,5 +83,5 @@ int main(int argc, char **argv) {
         robot_states_publisher.publish(robot_states_msg);
         ros::spinOnce();     
         loop_rate.sleep();
-    }
+    } */
 }
