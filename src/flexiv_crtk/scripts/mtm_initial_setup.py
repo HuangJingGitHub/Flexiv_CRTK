@@ -60,6 +60,7 @@ if __name__ == '__main__':
 
     cur_pose = ml.measured_cp()
     is_MTM_aligned = False
+    # ml.body.servo_cf(np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]))
     while not rospy.is_shutdown():
         if robot_pose_initialized == False:
             print('Waiting for robot pose to be initialized')
