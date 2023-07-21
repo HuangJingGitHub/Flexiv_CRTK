@@ -10,6 +10,7 @@
 #include "ros/ros.h"
 #include "geometry_msgs/TransformStamped.h"
 #include "std_msgs/Bool.h"
+#include "std_msgs/Int32.h"
 #include "flexiv_crtk/RobotStates_CRTK.h"
 
 // IP of the robot server
@@ -18,17 +19,32 @@ std::string robotIP = "192.168.2.100";
 std::string localIP = "192.168.2.108";
 std::string master_measured_cp_topic = "/MTML/measured_cp";
 std::string master_align_state_topic = "/MTM_align_state";
-std::string master_gripper_closed_totic = "MTML/gripper/closed";
+std::string master_gripper_closed_topic = "MTML/gripper/closed";
+std::string footpedal_clutch_button_topic = "/footpedal_clutch_state";
 Eigen::Vector3d master_translation, robot_translation, initial_master_translation, initial_robot_translation, master_translation_variation;
 Eigen::Quaterniond master_quaterion, robot_quaterion, initial_master_quaterion, initial_robot_quaterion;
 Eigen::Quaterniond master_rotation_variation(1, 0, 0, 0);
 Eigen::Matrix4d master_rotation_mat, robot_rotation_mat, initial_master_rotation_mat, initial_robot_rotation_mat;
+int footpedal_clutch_button_val = 0;
 double translation_scale = 1;
 Eigen::Matrix3d master_to_robot_base_transform = Eigen::MatrixXd::Identity(3, 3); // happy to be consistent
 bool master_pose_initialized = false;
 bool master_aligned = false;
 bool master_gripper_once_closed = false;
 bool robot_pose_initialized = false;
+
+void masterAlignMsgCallback(const std_msgs::Bool& msg) {
+    master_aligned = msg.data;
+}
+
+void masterGripperClosedMsgCallback(const std_msgs::Bool& msg) {
+    if (msg.data == true)
+        master_gripper_once_closed = true;
+}
+
+void footpedalClutchButtonMsgCallback(const std_msgs::Int32& msg) {
+    footpedal_clutch_button_val = msg.data;
+}
 
 void masterMsgCallback(const geometry_msgs::TransformStamped& msg) {
     // std::cout << "Successfully receive MTML cp: " << msg.header.seq << '\n';
@@ -45,6 +61,9 @@ void masterMsgCallback(const geometry_msgs::TransformStamped& msg) {
         master_rotation_variation = master_quaterion * initial_master_quaterion.inverse();
     }
 
+    if (footpedal_clutch_button_val == 1)
+        master_pose_initialized = false;
+
     if (master_pose_initialized == false) {
         master_pose_initialized = true;
         initial_master_translation = master_translation;
@@ -52,24 +71,19 @@ void masterMsgCallback(const geometry_msgs::TransformStamped& msg) {
     }
 }
 
-void masterAlignMsgCallback(const std_msgs::Bool& msg) {
-    master_aligned = msg.data;
-}
-
-void masterGripperClosedMsgCallback(const std_msgs::Bool& msg) {
-    if (msg.data == true)
-        master_gripper_once_closed = true;
-}
-
 void robotMsgCallback(const flexiv_crtk::RobotStates_CRTK& msg) {
-        robot_translation(0) = msg.measured_cp.position.x;
-        robot_translation(1) = msg.measured_cp.position.y;
-        robot_translation(2) = msg.measured_cp.position.z;
+    robot_translation(0) = msg.measured_cp.position.x;
+    robot_translation(1) = msg.measured_cp.position.y;
+    robot_translation(2) = msg.measured_cp.position.z;
 
-        robot_quaterion.w() = msg.measured_cp.orientation.w;
-        robot_quaterion.x() = msg.measured_cp.orientation.x;
-        robot_quaterion.y() = msg.measured_cp.orientation.y;
-        robot_quaterion.z() = msg.measured_cp.orientation.z;
+    robot_quaterion.w() = msg.measured_cp.orientation.w;
+    robot_quaterion.x() = msg.measured_cp.orientation.x;
+    robot_quaterion.y() = msg.measured_cp.orientation.y;
+    robot_quaterion.z() = msg.measured_cp.orientation.z;
+
+    if (footpedal_clutch_button_val == 1)
+        robot_pose_initialized = false;
+
     if (robot_pose_initialized == false) {
         robot_pose_initialized = true;
         initial_robot_translation = robot_translation;
@@ -135,9 +149,10 @@ int main(int argc, char** argv) {
     ros::init(argc, argv, "flexiv_teleoperation_node");
     ros::NodeHandle node_handle;
     ros::Subscriber mater_align_state_sub = node_handle.subscribe(master_align_state_topic, 100, masterAlignMsgCallback);
-    ros::Subscriber master_gripper_closed_sub = node_handle.subscribe(master_gripper_closed_totic, 100, masterGripperClosedMsgCallback);
+    ros::Subscriber master_gripper_closed_sub = node_handle.subscribe(master_gripper_closed_topic, 100, masterGripperClosedMsgCallback);
     ros::Subscriber master_cp_sub = node_handle.subscribe(master_measured_cp_topic, 100, masterMsgCallback);
     ros::Subscriber robot_cp_sub = node_handle.subscribe("flexiv/robot_states/", 100, robotMsgCallback);
+    ros::Subscriber footpedal_clutch_button_sub = node_handle.subscribe(footpedal_clutch_button_topic, 100, footpedalClutchButtonMsgCallback);
     ros::Rate loop_rate(30);
     
     // master alignment
@@ -156,6 +171,9 @@ int main(int argc, char** argv) {
     }
 
     while (true) {
+        if (footpedal_clutch_button_val == 1)
+            continue;
+
         master_translation_variation = translation_scale * (master_translation - initial_master_translation);
         std::vector<double> robot_target_pose(7, 0);
         // transformPoseIntoVec(robot_target_pose, master_translation_variation, master_quaterion);
