@@ -36,7 +36,6 @@ int main(int argc, char** argv) {
             }
             log.info("Fault on robot server is cleared");
         }
-
         // Enable the robot, make sure the E-stop is released before enabling
         log.info("Enabling robot ...");
         robot.enable();
