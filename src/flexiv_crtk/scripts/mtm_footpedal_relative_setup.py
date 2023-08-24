@@ -84,6 +84,10 @@ if __name__ == '__main__':
                 ml.body.servo_cf(np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]))
                 # ml.disable()
             elif master_gripper_once_closed and footpedal_clutch_button_val == 1:
+                print("Footpedal clutch is pressed. Lock master orientation")
                 ml.lock_orientation_as_is()
-            
-            
+                while (footpedal_clutch_button_val == 1):
+                    print("Footpedal clutch is pressed.")
+                print("Footpedal clutch is released. Unlock master orientation")
+                ml.unlock_orientation()
+                
