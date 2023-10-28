@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -shared -Wl,-soname,libgtest.so -o libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/build/visual_rviz/gtest/googlemock/gtest/src -Wl,-rpath,/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/build/visual_rviz/gtest/googlemock/gtest/src -lpthread 
