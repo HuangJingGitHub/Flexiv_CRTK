@@ -1,8 +1,0 @@
-In file included from [01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/test_main.cpp:3:0[m[K:
-[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/flexiv_crtk/src/robot_config.hpp:7:10:[m[K [01;31m[Kfatal error: [m[Kflexiv_include/flexiv/Robot_CRTK.hpp: No such file or directory
- #include [01;31m[K"flexiv_include/flexiv/Robot_CRTK.hpp"[m[K
-          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-make[2]: *** [CMakeFiles/test_main.dir/src/test_main.cpp.o] Error 1
-make[1]: *** [CMakeFiles/test_main.dir/all] Error 2
-make: *** [all] Error 2

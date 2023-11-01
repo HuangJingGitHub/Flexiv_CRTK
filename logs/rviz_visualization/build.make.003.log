@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target basic_shapes[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/basic_shapes.dir/src/basic_shapes.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/devel/.private/rviz_visualization/lib/rviz_visualization/basic_shapes[0m
-[100%] Built target basic_shapes

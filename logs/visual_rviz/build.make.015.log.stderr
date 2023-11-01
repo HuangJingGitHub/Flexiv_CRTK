@@ -1,7 +1,0 @@
-[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/visual_rviz/src/joint_states_publisher_test.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
-[01m[K/home/jing/Documents/Scripts/CRTK/Flexiv_CRTK/src/visual_rviz/src/joint_states_publisher_test.cpp:16:28:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs::JointState_<std::allocator<void> >::_header_type {aka struct std_msgs::Header_<std::allocator<void> >}[m[K’ has no member named ‘[01m[Ktime[m[K’
-     cur_joint_state.header.[01;31m[Ktime[m[K = ros::Time::now();
-                            [01;31m[K^~~~[m[K
-make[2]: *** [CMakeFiles/joint_states_pub_test.dir/src/joint_states_publisher_test.cpp.o] Error 1
-make[1]: *** [CMakeFiles/joint_states_pub_test.dir/all] Error 2
-make: *** [all] Error 2
