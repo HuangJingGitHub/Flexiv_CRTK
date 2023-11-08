@@ -4,8 +4,17 @@ Flexiv CRTK wrappers provide [CRTK](https://github.com/collaborative-robotics/do
 C++ and Python wrappers are provided. As wrappers are based on derived classes of base classes in Flexiv RDK, they are also compatible with newer versions of RDK after necessary adjustments.
 The Flexiv states---CRTK query commands, Flexiv methods---CRTK motion commands correspondence are as follows.
 | flexiv::RobotStates | CRTK query commands |
-|---------------------|---------------------|
+|:---:|:---:|
 |        q            |   measured_js()     |
+| theta | ≈measured_js |
+| tcpPose | measure_cp |
+| tcpVel | measured_cv |
+| extRenchInBase | measured_cf |
+| / | setpoint_js/cp/cv/cf |
+| / | goal_js |
+| tcpPoseDes | goal_cp |
+| / | goal_cv |
+
 
 ## C++ Wrapper
 The C++ wrapper does not rely on a built Flexiv RDK. It just needs to include two folders from [Flexiv RDK](https://github.com/flexivrobotics/flexiv_rdk):
