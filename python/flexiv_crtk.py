@@ -3,7 +3,7 @@ import time
 # Import Flexiv RDK Python library
 # fmt: off
 import sys
-sys.path.insert(0, "../src/flexiv_include/lib_py")
+sys.path.insert(0, "./lib_py")
 import flexivrdk
 # fmt: on
 
