@@ -23,13 +23,13 @@ The C++ wrapper does not rely on a built Flexiv RDK. It only needs to include tw
 - The `include/flexiv` folder containing public source code.
 - The `lib` folder containing compiled outputs from unpublicized source code.
 
-The Robot_CRTK.hpp, where CRTK methods are implemented, includes source files in `include/flexiv`. Use the wrapper following
+The `Robot_CRTK.hpp`, where CRTK methods are implemented, includes source files in `include/flexiv`. Use the wrapper following
 - In the program, replace `#include your path to Robot.hpp` with `#include your path to Robot_CRTK.hpp`.
 - When instancing a robot object, use `flexiv::Robot_CRTK robot(robotIP, localIP)` to replace `flexiv::Robot robot(robotIP, localIP)`. Everything else remains the same as in the RDK. CRTK methods will be invokable, e.g. `robot.measured_jp()` returns the robot's joint position.
 - When compiling the program, add the corresponding platform-dependent `.a` file in `lib` to the linked library list of the output target. 
 
 **Notice**
-There are ROS-related setups in the current Robot_CRTK.hpp. They can be safely removed without influencing the CRTK implementation.
+There are ROS-related setups in the current `Robot_CRTK.hpp`. They can be safely removed without influencing the CRTK implementation.
 
 ## Python Wrapper
 The Python wrapper does not rely on a built Flexiv RDK. It only needs to include the `lib_py` folder from Flexiv RDK. `flexiv_crtk.py` implements CRTK methods and inherits methods 
