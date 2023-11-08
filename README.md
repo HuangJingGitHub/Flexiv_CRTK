@@ -1,7 +1,7 @@
 # Flexiv_CRTK
 Flexiv CRTK wrappers provide [CRTK (Collaborative Robotics Toolkit)](https://collaborative-robotics.github.io/)-style wrappers for [Flexiv RDK](https://github.com/flexivrobotics/flexiv_rdk) (v 0.6). 
 
-C++ and Python wrappers are provided with the support from JHU team. As wrappers are using derived classes of base classes in Flexiv RDK, they are also compatible with newer versions of RDK after necessary adjustments.
+C++ and Python wrappers are provided with support from JHU team. As wrappers are using derived classes of base classes in Flexiv RDK, they are also compatible with newer versions of RDK after necessary adjustments.
 
 Available Flexiv states-CRTK query commands (first two columns) and Flexiv methods-CRTK motion commands (last two columns) correspondences are as follows:
 | flexiv::RobotStates:: | CRTK query command | flexiv::Robot:: | CRTK motion command |
