@@ -2,19 +2,18 @@
 Flexiv CRTK wrappers provide [CRTK](https://github.com/collaborative-robotics/documentation/wiki) wrappers for [Flexiv RDK](https://github.com/flexivrobotics/flexiv_rdk). (v 0.6). 
 
 C++ and Python wrappers are provided. As wrappers are based on derived classes of base classes in Flexiv RDK, they are also compatible with newer versions of RDK after necessary adjustments.
-The Flexiv states---CRTK query commands, Flexiv methods---CRTK motion commands correspondence are as follows.
-| flexiv::RobotStates | CRTK query commands |
-|:---:|:---:|
-|        q            |   measured_js()     |
-| theta | ≈measured_js |
-| tcpPose | measure_cp |
-| tcpVel | measured_cv |
-| extRenchInBase | measured_cf |
-| / | setpoint_js/cp/cv/cf |
-| / | goal_js |
-| tcpPoseDes | goal_cp |
-| / | goal_cv |
-
+The Flexiv states-CRTK query commands, Flexiv methods-CRTK motion commands correspondence are as follows.
+| flexiv::RobotStates | CRTK query command | flexiv::Robot:: | CRTK motion command |
+| :---: | :---: | :---: | :---: |
+| q |   measured_js() | streamJointPositiion() | servo_jp() |
+| theta | ≈measured_js() | streamJointTorque() | servo_jf() |
+| tcpPose | measure_cp() | streamTcpPose() | servo_cp() |
+| tcpVel | measured_cv() | sendJointPosition() | interpolate_jp()
+| extRenchInBase | measured_cf() | sendTcpPose() | interpolate_cp() |
+| / | setpoint_js/cp/cv/cf() | executePrimitive("MoveJ, ...") | move_jp() |
+| / | goal_js() | executePrimitive("MovePTP, ...") | move_cp() |
+| tcpPoseDes | goal_cp() | / | servo/interpolate_jv()/cv()/cf() |
+| / | goal_cv() | / | servo/interpolate_jr()/cr() |
 
 ## C++ Wrapper
 The C++ wrapper does not rely on a built Flexiv RDK. It just needs to include two folders from [Flexiv RDK](https://github.com/flexivrobotics/flexiv_rdk):
