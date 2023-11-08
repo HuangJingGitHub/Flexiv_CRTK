@@ -3,7 +3,7 @@ Flexiv CRTK wrappers provide [CRTK](https://github.com/collaborative-robotics/do
 
 C++ and Python wrappers are provided. As wrappers are based on derived classes of base classes in Flexiv RDK, they are also compatible with newer versions of RDK after necessary adjustments.
 
-Available Flexiv states-CRTK query commands and Flexiv methods-CRTK motion commands correspondences are as follows:
+Available Flexiv states-CRTK query commands (first two columns) and Flexiv methods-CRTK motion commands (last two columns) correspondences are as follows:
 | flexiv::RobotStates:: | CRTK query command | flexiv::Robot:: | CRTK motion command |
 | :---: | :---: | :---: | :---: |
 | q |   measured_js() | streamJointPositiion() | servo_jp() |
@@ -16,8 +16,6 @@ Available Flexiv states-CRTK query commands and Flexiv methods-CRTK motion comma
 | tcpPoseDes | goal_cp() | / | servo/interpolate_jv()/cv()/cf() |
 | / | goal_cv() | / | servo/interpolate_jr()/cr() |
 
-The first two columns are the Flexiv states-CRTK query commands mapping. The last two columns are the Flexiv methods-CRTK motion commands mapping.
-
 ## C++ Wrapper
 The C++ wrapper does not rely on a built Flexiv RDK. It only needs to include two folders from Flexiv RDK:
 - The `include/flexiv` folder containing public source code.
@@ -29,7 +27,7 @@ The `Robot_CRTK.hpp`, where CRTK methods are implemented, includes source files 
 - When compiling the program, add the corresponding platform-dependent `.a` file in `lib` to the linked library list of the output target. 
 
 **Notice**
-There are ROS-related setups in the current `Robot_CRTK.hpp`. They can be safely removed without influencing the CRTK implementation.
+There are ROS-related setups in the current `Robot_CRTK.hpp`, which can be safely removed without influencing the CRTK implementation.
 
 ## Python Wrapper
 The Python wrapper does not rely on a built Flexiv RDK. It only needs to include the `lib_py` folder from Flexiv RDK. `flexiv_crtk.py` implements CRTK methods and inherits methods 
