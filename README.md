@@ -1,5 +1,5 @@
 # Flexiv_CRTK
-Flexiv CRTK wrappers provide [CRTK (Collaborative Robotics Toolkit)](https://collaborative-robotics.github.io/)-style wrappers for [Flexiv RDK](https://github.com/flexivrobotics/flexiv_rdk) (v 0.6) for Flexiv Rizon 4 robot. 
+Flexiv CRTK wrappers provide [CRTK (Collaborative Robotics Toolkit)](https://collaborative-robotics.github.io/)-style wrappers for [Flexiv RDK](https://github.com/flexivrobotics/flexiv_rdk) (v 0.6) on Flexiv Rizon 4 robotic arm. 
 
 C++ and Python wrappers are available with support from JHU team. As wrappers are using derived classes of base classes in Flexiv RDK, they are also compatible with newer versions of RDK after necessary adjustments.
 
